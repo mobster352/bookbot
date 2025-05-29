@@ -20,3 +20,19 @@ def get_number_characters(text):
             else:
                 chars[lower_char] = 1
     return chars
+
+# sort_character_dictionary
+# Inputs: -dictionary --character dictionary
+# Outputs: -list --sorted list of character dictionary
+def sort_character_dictionary(chars):
+    sorted_chars = []
+    for char in chars:
+        sorted_chars.append({"char": char, "num": chars[char]})
+    sorted_chars.sort(reverse=True, key=sort_on)
+    return sorted_chars
+
+# sort_on
+# Inputs: -dictionary
+# Outputs: -dictionary --sorted by num
+def sort_on(dict):
+    return dict["num"]
